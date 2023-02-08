@@ -1,0 +1,11 @@
+{
+  "mail.forgot-password.body-link-label": "Je wachtwoord opnieuw instellen",
+  "mail.forgot-password.body-message-line1": "We hebben een verzoek ontvangen voor het wijzigen van het wachtwoord behorende bij het account dat gekoppeld is aan je e-mailadres.",
+  "mail.forgot-password.body-message-line2": "Indien je je wachtwoord niet opnieuw wilt instellen, dan kun je dit bericht negeren.",
+  "mail.forgot-password.body-title": "Je wachtwoord vergeten? We zorgen voor een nieuw wachtwoord.",
+  "mail.forgot-password.subject": "Wachtwoord van My Soil Capital opnieuw instellen",
+  "mail.verify-email.body-link-label": "Mijn e-mailadres verifiëren",
+  "mail.verify-email.body-message-line1": "Je hebt een nieuw account aangemaakt op de mySoilCapital App. Om je aanmelding te voltooien, klik je op de onderstaande link om je e-mailaderes te verifiëren en je account te activeren. ",
+  "mail.verify-email.body-title": "Aanmeldprocedure voltooien.",
+  "mail.verify-email.subject": "Je e-mailadres verifiëren"
+}

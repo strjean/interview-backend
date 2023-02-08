@@ -1,0 +1,12 @@
+{
+  "mail.forgot-password.body-link-label": "Changer mon mot de passe",
+  "mail.forgot-password.body-message-line1": "Nous avons reçu une demande de réinitialisation de mot de passe pour le compte lié à votre adresse email.",
+  "mail.forgot-password.body-message-line2": "Si vous ne voulez pas modifier votre mot de passe, vous pouvez ignorer ce message.",
+  "mail.forgot-password.body-title": "Mot de passe oublié ?",
+  "mail.forgot-password.subject": "Changer votre mot de passe My Soil Capital",
+  "mail.verify-email.body-link-label": "Vérifier mon adresse mail",
+  "mail.verify-email.body-message-line1": "Vous avez créé un nouveau compte sur mySoilCapital App. Pour terminer votre inscription, veuillez cliquer sur le lien ci-dessous pour vérifier votre adresse mail et activer votre compte.",
+  "mail.verify-email.body-message-line2": " ",
+  "mail.verify-email.body-title": "Terminez le processus d’inscription.",
+  "mail.verify-email.subject": "Vérifiez votre adresse mail"
+}

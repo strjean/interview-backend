@@ -1,0 +1,12 @@
+{
+  "mail.forgot-password.body-link-label": "Reset your password",
+  "mail.forgot-password.body-message-line1": "We received a request to change the password for the account linked to your email address.",
+  "mail.forgot-password.body-message-line2": "If you don't want to reset your password, you can ignore this message.",
+  "mail.forgot-password.body-title": "Forgot your password? Let's get you a new one.",
+  "mail.forgot-password.subject": "Reset My Soil Capital password",
+  "mail.verify-email.body-link-label": "Verify my email address",
+  "mail.verify-email.body-message-line1": "You have created a new account on mySoilCapital App. To complete your sign up, please click on the link below to verify your email address and activate your account. ",
+  "mail.verify-email.body-message-line2": " ",
+  "mail.verify-email.body-title": "Complete sign up process.",
+  "mail.verify-email.subject": "Verify your email address"
+}
