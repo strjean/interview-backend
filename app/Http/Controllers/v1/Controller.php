@@ -7,7 +7,7 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -19,14 +19,10 @@ class Controller extends BaseController
      *
      * @param  string|null  $content
      * @param  int|null  $status
-     * @return Response|Application|ResponseFactory
+     * @return JsonResponse
      */
-    protected function responseAsJson(?string $content = '', ?int $status = 200): Response|Application|ResponseFactory
+    protected function responseAsJson(?array $content = [], ?int $status = 200, array $headers = [], $options = JSON_UNESCAPED_UNICODE): JsonResponse
     {
-        return response(
-            content: $content,
-            status: $status,
-            headers: ['Content-Type' => 'application/json'],
-        );
+        return response()->json($content, $status, $headers, $options);
     }
 }
