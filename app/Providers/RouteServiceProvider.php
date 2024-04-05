@@ -48,7 +48,10 @@ class RouteServiceProvider extends ServiceProvider
             $p = 'v1';
             $m = ['api', 'api_version:v1'];
             $n = $this->namespace.'\v1';
-            Route::prefix($p)->middleware($m)->namespace($n)->group(base_path('routes/api/v1/auth.php'));
+            $files = glob(base_path('routes/api/v1/*.php'));
+            foreach ($files as $file) {
+                Route::prefix($p)->middleware($m)->namespace($n)->group($file);
+            }
         });
     }
 
