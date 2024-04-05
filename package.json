@@ -1,0 +1,11 @@
+{
+  "name": "soil-capital",
+  "version": "0.1.1",
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "init:project": "./initProject.sh",
+    "start": "php artisan serve"
+  }
+}
