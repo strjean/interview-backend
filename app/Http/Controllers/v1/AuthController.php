@@ -100,7 +100,7 @@ class AuthController extends Controller
 
         $token = auth()->login($user);
 
-        return response()->json(array_merge(
+        return $this->responseAsJson(array_merge(
             ['message' => 'User successfully registered'],
             $this->createNewToken($token)
         ), 201);
@@ -129,20 +129,20 @@ class AuthController extends Controller
         ServerTiming::stop('Auth-Attempt');
 
         if (! $token) {
-            return response()->json(['error' => 'Bad Request'], 400);
+            return $this->responseAsJson(['error' => 'Bad Request'], 400);
         }
 
         if (! Auth::user()->is_active) {
             auth()->logout();
 
-            return response()->json(['error' => 'User is not active'], 403);
+            return $this->responseAsJson(['error' => 'User is not active'], 403);
         }
 
         ServerTiming::start('Auth-CreateNewToken');
         $newToken = $this->createNewToken($token);
         ServerTiming::stop('Auth-CreateNewToken');
 
-        return response()->json($newToken);
+        return $this->responseAsJson($newToken);
     }
 
     /**
@@ -178,7 +178,7 @@ class AuthController extends Controller
     {
         auth()->logout();
 
-        return response()->json(['message' => 'User successfully signed out']);
+        return $this->responseAsJson(['message' => 'User successfully signed out']);
     }
 
     /**
@@ -188,7 +188,7 @@ class AuthController extends Controller
      */
     public function userProfile(): JsonResponse
     {
-        return response()->json(['user' => auth()->user()]);
+        return $this->responseAsJson(['user' => auth()->user()]);
     }
 
     /**
@@ -201,28 +201,28 @@ class AuthController extends Controller
         try {
             $new_token = auth()->refresh();
         } catch (TokenExpiredException $e) {
-            return response()->json(['error' => 'Token has expired and can no longer be refreshed'], 498);
+            return $this->responseAsJson(['error' => 'Token has expired and can no longer be refreshed'], 498);
         }
 
-        return response()->json($this->createNewToken($new_token));
+        return $this->responseAsJson($this->createNewToken($new_token));
     }
 
     public function test(): JsonResponse
     {
-        return response()->json(['message' => 'test']);
+        return $this->responseAsJson(['message' => 'test']);
     }
 
-    public function debug(): JsonResponse
+    public function debug(Request $request): JsonResponse
     {
-        $params = $this->request->all();
+        $language = $request->query('lang');
 
-        if ($params["language"] === "fr") {
-            return response()->json([
+        if ($language === "fr") {
+            return $this->responseAsJson([
                 'language' => "Français"
             ]);
         }
 
-        return response()->json([
+        return $this->responseAsJson([
             'language' => "English"
         ]);
     }
